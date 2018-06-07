@@ -44,9 +44,9 @@
 #
 class role_geneious (
   $compose_version     = '1.19.0',
-  $MYSQL_VERSION       = '5.5.60',
-  $MYSQL_ROOT_PASSWORD = 'changeme',
-  $MYSQL_DATABASE      = 'naturalis-geneious'
+  $mysql_version       = '5.5.60',
+  $mysql_root_password = 'changeme',
+  $mysql_database      = 'naturalis-geneious'
   ) {
 
   # Install docker
