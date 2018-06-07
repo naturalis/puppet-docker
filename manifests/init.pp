@@ -42,7 +42,10 @@
 #
 # Copyright 2018 Your name here, unless otherwise noted.
 #
-class role_geneious {
+class role_geneious (
+  $MYSQL_ROOT_PASSWORD = 'changeme',
+  $MYSQL_DATABASE      = 'naturalis-geneious',
+  ) {
 
 
 }
