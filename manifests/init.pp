@@ -3,7 +3,8 @@
 class role_geneious (
   $compose_version     = '1.19.0',
   $docker_repo_dir     = '/opt/docker-geneious',
-  $docker_repo_source  = 'https://github.com/naturalis/docker-geneious.git'
+  $docker_repo_source  = 'https://github.com/naturalis/docker-geneious.git',
+  $env_file            = 'MYSQL_ROOT_PASSWORD=mypass'
   ) {
 
   # Install docker
@@ -26,7 +27,7 @@ class role_geneious (
   # Replace .env file
   file { "${::repo_dir}/.env":
     ensure   => file,
-    content  => template('role_dockertreebase/prod.env.erb'),
+    content  => $::env_file,
     require  => Vcsrepo[$::docker_repo_dir],
     #notify   => Exec['Restart containers on change'],
   }
