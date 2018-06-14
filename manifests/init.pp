@@ -2,7 +2,7 @@
 #
 class role_geneious (
   $compose_version     = '1.19.0',
-  $docker_repo_dir     = '/opt/docker-geneious',
+  $docker_base_dir     = '/opt/docker-geneious',
   $docker_repo_source  = 'https://github.com/naturalis/docker-geneious.git',
   $env_file            = 'MYSQL_ROOT_PASSWORD=mypass'
   ) {
@@ -17,7 +17,7 @@ class role_geneious (
   }
 
   # Download docker repo
-  vcsrepo { $role_geneious::docker_repo_dir:
+  vcsrepo { $role_geneious::docker_base_dir:
     ensure   => present,
     provider => git,
     source   => $role_geneious::docker_repo_source,
@@ -25,18 +25,18 @@ class role_geneious (
   }
 
   # Replace .env file
-  file { "${role_geneious::docker_repo_dir}/.env":
+  file { "${role_geneious::docker_base_dir}/.env":
     ensure   => file,
     content  => $role_geneious::env_file,
-    require  => Vcsrepo[$role_geneious::docker_repo_dir],
+    require  => Vcsrepo[$role_geneious::docker_base_dir],
     #notify   => Exec['Restart containers on change'],
   }
 
   # Start containers
-  docker_compose { "${role_geneious::docker_repo_dir}/docker-compose.yml":
+  docker_compose { "${role_geneious::docker_base_dir}/docker-compose.yml":
     ensure  => present,
     require => [
-      Vcsrepo[$role_geneious::docker_repo_dir]
+      Vcsrepo[$role_geneious::docker_base_dir]
     ]
   }
 
