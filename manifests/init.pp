@@ -42,9 +42,9 @@ class role_geneious (
   exec { 'Up the containers':
     command  => 'docker-compose up -d',
     require => [
+      Class['docker::compose'],
       Vcsrepo[$role_geneious::docker_base_dir],
-      File["${role_geneious::docker_base_dir}/.env"],
-      Class['docker::compose']
+      File["${role_geneious::docker_base_dir}/.env"]
     ]
   }
 
