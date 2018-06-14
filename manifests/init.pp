@@ -13,30 +13,30 @@ class role_geneious (
 
   # Install docker compose
   class {'docker::compose':
-    version => $::compose_version
+    version => $role_geneious::compose_version
   }
 
   # Download docker repo
-  vcsrepo { $::docker_repo_dir:
+  vcsrepo { $role_geneious::docker_repo_dir:
     ensure   => present,
     provider => git,
-    source   => $::docker_repo_source,
+    source   => $role_geneious::docker_repo_source,
     #require  => Package['git'],
   }
 
   # Replace .env file
-  file { "${::repo_dir}/.env":
+  file { "${role_geneious::docker_repo_dir}/.env":
     ensure   => file,
-    content  => $::env_file,
-    require  => Vcsrepo[$::docker_repo_dir],
+    content  => $role_geneious::env_file,
+    require  => Vcsrepo[$role_geneious::docker_repo_dir],
     #notify   => Exec['Restart containers on change'],
   }
 
   # Start containers
-  docker_compose { "{$::docker_repo_dir}/docker-compose.yml":
+  docker_compose { "${role_geneious::docker_repo_dir}/docker-compose.yml":
     ensure  => present,
     require => [
-      Vcsrepo[$::docker_repo_dir]
+      Vcsrepo[$role_geneious::docker_repo_dir]
     ]
   }
 
