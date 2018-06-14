@@ -1,4 +1,5 @@
 ---
 role_geneious::env_file: |
-  MYSQL_VERSION=5.7.22
+  MYSQL_VERSION=5.5.60
   MYSQL_ROOT_PASSWORD=changeme
+  
