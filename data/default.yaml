@@ -1,0 +1,5 @@
+---
+role_geneious::env_file:
+'
+FOO=bar
+'
