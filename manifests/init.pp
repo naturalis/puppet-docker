@@ -32,9 +32,15 @@ class role_geneious (
     #notify   => Exec['Restart containers on change'],
   }
 
+  # Exec defaults
+  Exec {
+    path => '/usr/local/bin/',
+    cwd  => $role_geneious::docker_base_dir
+  }
+
   # Start containers
-  docker_compose { "${role_geneious::docker_base_dir}/docker-compose.yml":
-    ensure  => present,
+  exec { 'Up the containers':
+    command  => 'docker-compose up -d',
     require => [
       Vcsrepo[$role_geneious::docker_base_dir]
     ]
