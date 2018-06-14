@@ -1,5 +1,4 @@
 ---
-role_geneious::env_file:
-'
-FOO=bar
-'
+role_geneious::env_file: |
+  MYSQL_VERSION=5.7.22
+  MYSQL_ROOT_PASSWORD=changeme
