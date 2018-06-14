@@ -32,7 +32,7 @@ class role_geneious (
   }
 
   # Start containers
-  docker_compose { "{$::repo_dir}/docker-compose.yml":
+  docker_compose { "{$::docker_repo_dir}/docker-compose.yml":
     ensure  => present,
     require => [
       Vcsrepo[$::docker_repo_dir]
