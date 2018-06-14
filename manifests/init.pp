@@ -4,7 +4,7 @@ class role_geneious (
   $compose_version     = '1.19.0',
   $docker_base_dir     = '/opt/docker-geneious',
   $docker_repo_source  = 'https://github.com/naturalis/docker-geneious.git',
-  $env_file            = 'MYSQL_ROOT_PASSWORD=mypass'
+  $env_file            = undef
   ) {
 
   # Install docker
