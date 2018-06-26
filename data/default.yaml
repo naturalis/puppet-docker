@@ -1,8 +1,8 @@
 ---
-docker::compose_version: '1.19.0'
-docker::docker_base_dir: '/opt/docker-geneious'
-docker::docker_repo_source: 'https://github.com/naturalis/docker-geneious.git'
-docker::env_file: |
+role_geneious::compose_version: '1.19.0'
+role_geneious::docker_base_dir: '/opt/docker-geneious'
+role_geneious::docker_repo_source: 'https://github.com/naturalis/docker-geneious.git'
+role_geneious::env_file: |
   MYSQL_VERSION=5.5.60
   MYSQL_ROOT_PASSWORD=mypass
   
