@@ -1,9 +1,9 @@
 # == Class: misc::docker
 #
 class role_geneious (
-  $compose_version     = '1.19.0',
-  $docker_base_dir     = '/opt/docker-geneious',
-  $docker_repo_source  = 'https://github.com/naturalis/docker-geneious.git',
+  $compose_version     = undef,
+  $docker_base_dir     = undef,
+  $docker_repo_source  = undef,
   $env_file            = undef
   ) {
 
