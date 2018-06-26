@@ -1,4 +1,4 @@
-# == Class: misc::docker
+# == Class: role_geneious
 #
 class role_geneious (
   $compose_version     = undef,
