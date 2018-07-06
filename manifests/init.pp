@@ -1,10 +1,11 @@
 # == Class: role_geneious
 #
 class role_geneious (
-  $compose_version     = undef,
-  $docker_base_dir     = undef,
-  $docker_repo_source  = undef,
-  $env_file            = undef
+  $compose_version      = undef,
+  $docker_base_dir      = undef,
+  $docker_repo_source   = undef,
+  $docker_repo_revision = undef,
+  $env_file             = undef
   ) {
 
   # Install docker
@@ -21,7 +22,7 @@ class role_geneious (
     ensure   => present,
     provider => git,
     source   => $role_geneious::docker_repo_source,
-    revision => 'v1.0'
+    revision => $role_geneious::docker_repo_revision
     #require  => Package['git']
   }
 
