@@ -21,7 +21,8 @@ class role_geneious (
     ensure   => present,
     provider => git,
     source   => $role_geneious::docker_repo_source,
-    #require  => Package['git'],
+    revision => 'v1.0'
+    #require  => Package['git']
   }
 
   # Replace .env file
