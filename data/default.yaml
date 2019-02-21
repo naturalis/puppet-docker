@@ -5,5 +5,5 @@ role_geneious::docker_repo_source: 'https://github.com/naturalis/docker-geneious
 role_geneious::docker_repo_revision: 'v1.0'
 role_geneious::env_file: |
   MYSQL_VERSION=5.5.60
+  UBUNTU_VERSION=16.04
   MYSQL_ROOT_PASSWORD=mypass
-  
