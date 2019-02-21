@@ -7,3 +7,19 @@ role_geneious::env_file: |
   MYSQL_VERSION=5.5.60
   UBUNTU_VERSION=16.04
   MYSQL_ROOT_PASSWORD=mypass
+role_geneious::answers: |
+  o
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  1
+  
+  
+  
+  XXXXX-XXXX-XXXX-XXXX-XXXX
