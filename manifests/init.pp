@@ -42,7 +42,7 @@ class role_geneious (
 
   # Start containers
   exec { 'Up the containers':
-    command  => 'docker-compose up -d',
+    command  => 'docker-compose up -d geneiouslm',
     require => [
       Class['docker'],
       Class['docker::compose'],
