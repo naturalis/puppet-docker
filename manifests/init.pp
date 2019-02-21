@@ -7,6 +7,7 @@ class role_geneious (
   $docker_repo_revision = undef,
   $env_file             = undef,
   $answers              = undef,
+  $command              = undef
   ) {
 
   # Install docker
@@ -51,7 +52,7 @@ class role_geneious (
 
   # Start containers
   exec { 'Up the containers':
-    command  => 'docker-compose up -d geneiouslm',
+    command  => $role_geneious::command,
     require => [
       Class['docker'],
       Class['docker::compose'],
