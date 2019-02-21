@@ -1,4 +1,5 @@
 ---
+role_geneious::command: 'docker-compose up -d'
 role_geneious::compose_version: '1.19.0'
 role_geneious::docker_base_dir: '/opt/docker-geneious'
 role_geneious::docker_repo_source: 'https://github.com/naturalis/docker-geneious.git'
