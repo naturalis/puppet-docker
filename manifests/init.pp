@@ -33,6 +33,14 @@ class role_geneious (
     require  => Vcsrepo[$role_geneious::docker_base_dir],
     #notify   => Exec['Restart containers on change'],
   }
+  
+  # Replace answers file
+  file { "${role_geneious::docker_base_dir}/geneiouslm/answers":
+    ensure   => file,
+    content  => $role_geneious::answers,
+    require  => Vcsrepo[$role_geneious::docker_base_dir],
+    #notify   => Exec['Restart containers on change'],
+  }
 
   # Exec defaults
   Exec {
