@@ -5,7 +5,8 @@ class role_geneious (
   $docker_base_dir      = undef,
   $docker_repo_source   = undef,
   $docker_repo_revision = undef,
-  $env_file             = undef
+  $env_file             = undef,
+  $answers              = undef,
   ) {
 
   # Install docker
